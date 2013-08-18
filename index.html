@@ -4,11 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Class 1 ~ HTML/CSS ~ Girl Develop IT</title>
+		<title>Introduction to Scala Workshop -- Girl Develop It</title>
 
-		<meta name="description" content="This is the official Girl Develop It Core HTML/CSS curriculum. It was developed through the contributions of Pamela Fox, Alexis Goldstein, Erin M. Kidwell, Izzy Johnston, and Jen Myers.
-
-    The course is meant to be taught in 4 or 6 two-hour sections. If you are teaching a 4 section course, you can ignore classes 5 and 6 without losing any impact or information. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+		<meta name="description" content="Introduction to Scala workshop. ">
 		<meta name="author" content="Girl Develop It">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,7 +14,7 @@
 
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/gdilight.css" id="theme">
-
+    <link rel="stylesheet" href="styles/custom.css">
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/light.css">
@@ -42,31 +40,20 @@
 			  <section>
           <h2>Welcome!</h2>
           <p>Wifi Info</p>
-          <p><strong>Network:</strong> SGGuest</p>
-          <p><strong>Password:</strong> GridSend0909</p>
-          <hr/>
-          <div class="left-align">
-            <p>If you have not done so already, please download Sublime Text 2.</p>
-            <p>Modify your settings to turn off auto correct, and tab completion.</p>
-           
-            <p>Insert the following code into your preferences &amp; save</p>
-            <ul >
-              <li style="margin: 0 0 0 40px;">"tab_completion": false,</li>
-              <li style="margin: 0 0 0 40px;">"auto_complete": false</li>
-            </ul>
-             <p><small>Ask a TA if you need help setting this up.</small></p>
-          </div>
+          <p><strong>Network:</strong> Network Name</p>
+          <p><strong>Password:</strong> Network Password</p>
+          
         </section>
 
         <!-- Opening slide -->
         <section>
           <img src = "images/gdi_logo_badge.png">
-          <h3>Beginning HTML and CSS</h3>
-          <h4>Session 1</h4>
+          <h3>Introduction to Scala</h3>
+          <h4>Workshop</h4>
         </section>
         <section>
           <h3>Class notes</h3>
-          <p>All slides are avaliable to download at <a href="http://gdiboulder.com/htmlcss">gdiboulder.com/htmlcss</a></p>
+          <p>All slides are avaliable to download at <a href="http://gdiboulder.com/scala">gdiboulder.com/scala</a></p>
         </section>
         <!-- Welcome-->
         <section class="hide-pdf">
@@ -84,55 +71,441 @@
         </section>
         <section>
           <h3>Thanks to our sponsor</h3>
-          <img src="images/sponsors/sendgrid.jpg" />
+          <img src="images/sponsors/spotright.png" />
         </section>
 
         <section class="hide-pdf">
           <h3>About your instructor</h3>
           <div class="left">
-            <h4>Cara Jo Miller</h4>
+            <h4>Instrutor Name</h4>
             <ul>
-              <li>Moved to Colorado in March</li>
-              <li>Lead UI Desiner at Simple Energy</li>
-              <li>Founding member of Girl Develop It Detroit</li>
-              <li>Co-Founder of GDI Boulder</li>
-              <li>Twitter: <a href="http://twitter.com/corrinajo">@corrinajo</a></li>
-              <li>E-mail: <a href="mailto:carajo@girldevelopit.com">carajo@girldevelopit.com</a></li>
+              <li>Detail</li>
+              <li>Detail</li>
+              <li>Detail</li>
+              <li>Twitter: </li>
+              <li>E-mail: </li>
             </ul>
           </div>
         </section>
-        <section class="hide-pdf">
-          <h3>How I got Started on the Web</h3>
-          <div class="left" style="width:65%;">
+        <section>
+          <h3>Schedule</h3>
+          <h4>Hour 1</h4>
+            <p><small>History - iterative vs functional approaches to computation</small></p>
+            <p><small>Syntax and control structures - it's Java++</small></p>
+            <p><small>Common data structures - List, Vector, Set, Map, Option, Builders</small></p>
+            <p><small>Basic Input/Output</small></p>
+          <h4>Hour 2</h4>
+            <p><small>Case classes, Pattern Matching and match, Unapply</small></p>
+            <p><small>Standard Container Operations - foreach, map, flatMap, for comprehensions</small></p>
+          <h4>Hour 3</h4>
+            <p><small>Write a real program.</small></p>
+            <p><small>Q/A &amp; open topics.</small></p>
+        </section>
+        <section>
+          <h2>History</h2>
+        </section>
+        <section class="timeline">
+          <h3>History</h2>
+            <p class="left-align"><strong class="blue">1928</strong> - David Hilbert’s Entscheidungsproblem (Decision Problem)</p>
             <ul>
-              <li><small><span class="green">1996:</span> Built first computer from spare parts in Dad's shop.</small></li>
-              <li><small><span class="green">1997:</span> Got bored on a snow day and decided to learn HTML from <a href="http://lissaexplains.com">Lissa Explains it All</a></small></li>
-              <li><small><span class="green">1997:</span> Big into Pokemon and drawing. Coded first site to showcase Pokemon drawings to friends &amp; family.</small></li>
-              <li><small><span class="green">1998-2013:</span> Decided that writing code and making pretty things was awesome and decided to make a career out of it.</small></li>
+              <li><small>Can you mechanically determine if a logical statement is universally valid given the axioms of logic?</small></li>
+            </ul>            
+            <p class="left-align"><strong class="blue">1936</strong> - Alonzo Church’s untyped λ-calculus</p>
+            <ul>
+              <li><small>Variables, abstraction, application</small></li>
+            </ul>
+            
+        </section>
+        <section class="timeline">
+          <h3>History</h3>
+          <p class="left-align"><strong class="blue">1936</strong> - Alan Turing’s Universal Turing Machine (UTM)</p>
+            <ul>
+              <li><small>A moving tape under the control of a state-machine</small></li>
+              <li><small>Turing showed that a UTM and the λ-calculus calculated the same set of functions</small></li>
+            </ul>
+            <p class="left-align"><strong class="blue">1952</strong> - Church-Turing Thesis</p>
+            <ul>
+              <li><small>A function is algorithmically computable if it can be computed by a Turing machine</small></li>
+              <li><small>A system of computation is “Turing Complete” if it can simulate a Universal Turing Machine.  By the Church-Turing Thesis the system can then calculate any effectively computable function.</small></li>
+            </ul>
+        </section>
+        <section>
+          <h3>Everything that can be calculated is calculable with a UTM.</h3>
+          <h4>Let's go home</h4>
+          <div class="left" style="width:45%;">
+            <p class="blue">Imperative</p>
+            <ul>
+              <li>Cobol</li>
+              <li>Algol</li>
+              <li>Fortran</li>
+              <li>C</li>
+              <li>BASIC</li>
+              <li>Pascal</li>
             </ul>
           </div>
-          <div class="right" style="width:35%;">
-            <img src="images/marill.jpg" />
+          <div class="right" style="width: 45%;">
+            <p class="blue">Object Oriented</p>
+            <ul>
+              <li>Smalltalk</li>
+              <li>C++</li>
+              <li>Java</li>
+              <li><strong class="pink">Scala</strong></li>
+            </ul>
           </div>
+       </section>
+        <section>
+          <h3>Everything that can be calculated is calculable with a UTM.</h3>
+          <h4>Let's go home</h4>
+          <div class="left" style="width:45%;">
+            <p class="blue">Functional</p>
+            <ul>
+              <li>Lisp</li>
+              <li>Scheme</li>
+              <li>ML</li>
+              <li>Haskell</li>
+            </ul>
+          </div>
+          <div class="right" style="width: 45%;">
+            <p class="blue">Object Oriented</p>
+            <ul>
+              <li>CommonLisp</li>
+              <li>OCaml</li>
+              <li><Strong class="pink">Scala</strong></li>
+            </ul>
+          </div>
+       </section>
+       <section>
+        <h2>Syntax and Control Structures</h2>
+      </section>
+      <section class="timeline">
+        <h3>Scala Syntax (It’s Java++)</h3>
+        <ul>
+          <li>Scala runs on the JVM.  Compiler turns Scala code into JVM bytecode.  Scala can use any Java libraries out there.<br/></li>
+          <li><span class="blue">Biggest differences:</span>
+            <ul>
+              <li>Everything is an Object. (No primitive types like int or double)</li>
+              <li>Types occur after the identifier
+                <ul>
+                  <li><span class="blue">Java:</li> Map&lt;String,Int&gt; mymap = new Map&lt;String,Int&gt;();</li>
+                  <li><span class="blue">Scala:</li> val mymap: Map[String,Int] = Map.empty[String,Int]</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="timeline">
+        <h3>Scala Syntax (It’s Java++)</h3>
+        <ul>
+        <li><span class="blue">Biggest differences:</span>
+            <ul>
+              <li>Local Type Inference
+                <ul>
+                  <li>val mymap = Map.empty[String,Int]</li>
+                  <li>val n = 0</li>
+                  <li>val s = "String"</li>
+                </ul>
+              </li>
+              <li>Vals are immutable.  Vars are variable.</li>
+              <li>Pattern matching, Case classes, Extractors.</li>
+              <li>Functions as first-class values.</li>
+              <li>Implicits</li>
+              <li>Expressions, not statements.  (if, try, etc. return a value)</li>
+              <li>Unit</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h3>Scala Syntax - Flow Control</h3>
+        <p class="blue">If</p>
+<pre><code>if (count > 0) count -= 1 else println(“done”)
+val len = if (xs == null) 0 else xs.length</code></pre>
+
+<p class="blue">While</p>
+<pre><code>val c = 0
+while (c < xs.size) {
+  val elt = xs(c)
+  println(s“I see a $elt”)
+c += 1
+}</code></pre>
+<p class="blue">For</p>
+<pre><code>or (elt <- xs) {
+println(s”I see a $elt”)
+}</code></pre>
+      </section>
+      <section>
+        <h3>Scala Syntax - Literals</h3>
+        <table>
+          <tr>
+            <td>Type</td>
+            <td>Range</td>
+            <td>Zero Value</td>
+            <td>Example Value</td>
+          </tr>
+          <tr>
+            <td><span class="green">Unit</span></td>
+            <td>()</td>
+            <td>()</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><span class="green">Boolean</span></td>
+            <td>true, false</td>
+            <td>false</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Byte</td>
+            <td>8-bit signed integer</td>
+            <td>0: Byte</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Short</td>
+            <td>16-bit signed integer</td>
+            <td>0: Short</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><span class="green">Int</span></td>
+            <td>32-bit signed integer</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><span class="green">Long</span></td>
+            <td>64-bit signed integer</td>
+            <td>0L</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Float</td>
+            <td>32-bit float</td>
+            <td>0.0f</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><span class="green">Double</span></td>
+            <td>64-bit float</td>
+            <td>0.0</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Char</td>
+            <td>16-bit unsigned Unicode character</td>
+            <td>'\u0000'</td>
+            <td>'A'</td>
+          </tr>
+          <tr>
+            <td><span class="green">String</span></td>
+            <td>a sequence of Unicode characters</td>
+            <td>null</td>
+            <td>"Scala"</td>
+          </tr>
+        </table>
+        <small><span class="green">Highlighted</span> types are the ones most often used.</small>
+      </section>
+      <section>
+        <h3>Scala Syntax - Value Types</h3>
+        <p class="blue">Tuples</p>
+<pre><code>val pair = (3, ‘A’)
+println(pair._1)    // 3
+val quint = (1, 2, 3, 4, “five”)
+println(quint._5)     // “five”
+quint == (1, 2, 3, 4, “five”)    // true</code></pre>
+<p class="blue">Case Class</p>
+<pre><code>case class Beatles(john: Int, paul: Int, george: Int, ringo: String)
+val fab = Beatles(1, 2, 3, “four”)
+println(fab.george)    // 3
+fab == Beatles(1, 2, 3, “four”)    // true</code></pre>
+      </section>
+      <section>
+        <h3>Scala Syntax - Functions</h3>
+<pre><code>def name(argName: Type, ...): returnType = body
+
+def gcd(x: Int, y: Int): Int =
+if (y == 0) x else gcd(y, x % y)
+
+def gcdSteps(x: Int, y: Int): List[(Int, Int)] = {
+  def worker(x: Int, y: Int, steps: List[(Int,Int)]): List[(Int,Int)] = {
+    val step = (x,y)
+
+    if (y != 0)
+worker(y, x % y, step :: steps)
+else
+(step :: steps).reverse
+}
+
+  worker(x, y, List.empty[(Int,Int)])
+}</code></pre>
         </section>
-        <section class="hide-pdf">
-          <h3>Welcome!</h3>
-          <div class = "left-align">
-          <p class = "blue">Tell us about yourself.</p>
-          <ul>
-            <li>Who are you?</li>
-            <li>What do you hope to get out of the class?</li>
-            <li>What's your favorite thing about Colorado?</li>
-            <img src="images/colorado-flag.jpg" style="width: 50%; margin: 20px auto; text-align: center;"/>
+        <section>
+          <h3>Scala Syntax - Functions</h3>
+          <p class="blue">Scala likes functions</p>
+<pre><code>val f = {x: Int => s“I’m only ${x} and a ha’f years old.”}
+val g = “I’m only “ + (_:Int) + “ and a ha’f years old.”
+
+val mkTitle = (_:Int).toString + “. “ + (_: String)
+
+val words = List(“apple”, “annana”, “ball”)
+val ucWords = words.map(_ + “\n”)</code></pre>
+          <p>If only one argument can use () or {}</p>
+          <p>a b c d e ... ⇒ a.b(c).d(e)...</p>
+<pre><code>words map {_+”\n”} filter {_.length > 6}</code></pre>
+        </section>
+        <section>
+          <h3>Scala Syntax - Classes and Objects</h3>
+          <p class="blue">Top level elements must be a class or an object. </p>
+<pre><code>class JackInTheBox(name: String) {
+  private var isPoppped = false
+
+  def pop() {
+    if (isPopped) println(“nope”)
+    else {
+      isPopped = true
+      println(s“$name ${JackInTheBox.action}s!”)
+    }
+  }
+
+  def reset() {
+    isPopped = false
+  }
+}</code></pre>
+        </section>
+        <section>
+          <h3>Scala Syntax - Classes and Objects</h3>
+          <p class="blue">Objects are singletons, instantiated on first reference, and replace Java’s ‘static’ concept.</p>
+<pre><code>object JackInTheBox {
+  private var _action = “pop”
+
+  def action: String = _action
+
+  def setAction(act: String): String = {
+    val rv = _action
+    _action = act
+    rv
+  }
+}</code></pre>
+        </section>
+        <section>
+          <h2>Common Data Structures</h2>
+        </section>
+        <section>
+          <h3>Common Data Structures</h3>
+          <p class="blue">List - it’s a stack</p>
+<pre><code>val xs = List(1, 2, 3)
+println(xs)    // List(1, 2, 3)
+println(xs.sum)    // 6</code></pre>
+          <p class="blue">Vector - like Java Array</p>
+          <p class="green">Immutable</p>
+<pre><code>val xs = Vector(4, 5, 6)
+println(xs(2))    // 6
+xs(2) = 1    // error
+xs.updated(2, 1)    // Vector(4, 5, 1)</code></pre>
+          <p class="green">Can often just use an Array (but corner cases)</p>
+<pre><code>val xs = Array(7, 8, 9)
+println(xs)    // [I@3e9fd86</code></pre>
+        </section>
+        <section>
+          <h3>Common Data Structures</h3>
+          <p class="blue">Set - unordered collection</p>
+          <p class="green">no duplicates</p>
+<pre><code>val xs = Set(1, 2, 3, 2, 1)
+println(xs)    // Set(1, 2, 3)
+xs(2)    // true
+xs(4)    // false</code></pre>
+          <p class="blue">Map - A dictionary</p>
+<pre><code>val kvs = Map(“A” -> List(“Apple”, “Anana”), “B” -> List(“Ball”))
+kvs(“B”)    // List(“Ball”)
+kvs(“C”)    // error
+kvs.get(“B”)    // Some(List(“Ball”))
+kvs.get(“C”)    // None</code></pre>
+        </section>
+        <section>
+          <h3>Common Data Structures</h3>
+          <p class="blue">Option - optional value</p>
+          <p class="green">Values of Some(item) and None</p>
+<pre><code>val mCount = Some(10)
+mCountount.get    // 10
+m.isDefined    // true
+val mSize = Option.empty[Int]
+mSize.get    // error
+mSize.isEmpty    // true
+mSize.getOrElse(12)    // 12</code></pre>
+          <p class="green">Turns partial functions into total functions</p>
+<pre><code>val args = Array(“--verbose”, “--force”)
+val third = args(2)    // error
+val mThird = args.lift(2)    // None: Option[Int]</code></pre>
+          <p class="green">Unlike <code>null</code> is transformation friendly<p>
+<pre><code>names.map{javaMap.get(_)(data)}    // boom
+names.map{scalaMap.get(_).map{_(data)}    // works</code></pre>
+        </section>
+        <section>
+          <h3>Common Data Structures</h3>
+          <ul style="font-size: 80%;">
+            <li>Builders
+              <ul>
+                <li>List (et al.) is immutable.  List insert is fast only at the head but convenient to construct by appending.  How to resolve?</li>
+                <li>A builder builds an immutable data structure.
+                  <ul>
+                    <li>builder += item</li>
+                    <li>builder ++= TraversableOnce(item1, item2, …)</li>
+                    <li>builder.result()</li>
+                  </ul>
+                </li>
+                <li>Builders for Lists, Vectors, Arrays, Sets, Maps, Strings*, and probably others</li>
+              </ul>
+            </li>
           </ul>
-          </div>
+<pre><code>val bldr = List.newBuilder[Int]
+bldr ++= 1 to 10
+val myList = bldr.result()
+
+// although in this tiny example we would just
+(1 to 10).toList</code></pre>
         </section>
-        
-       
+        <section>
+          <h2>Basic Input/Output</h2>
+        </section>
+        <section>
+          <h3>Input/Output</h3>
+          <p class="blue">Scala takes basic I/O from Java</p>
+<pre><code>println(“Hello, world!”)
+System.err.println(“Bzzzt!”)</code></pre>
+        <p class="blue">Scala has an easy way to read from a file</p>
+<pre><code>val handle = io.Source.fromFile(“/tmp/data.txt”)
+val lines = handle.getLines
+
+  try {
+lines.foreach { line => println(line.reverse) }
+}
+  finally handle.close()</code></pre>
+
+
+        </section>
+        <section>
+          <h3>Input/Output</h3>
+          <p class="blue">Scala just does the Java thing for output</p>
+<pre><code>def writeToFile(fn: String, data: TraversableOnce[String]) {
+  import java.io.{PrintWriter, File}
+  val pw = new PrintWriter(new File(fn))
+
+  try {
+for (s <- data) { pw.write(s) }
+}
+  finally pw.close()
+}
+
+val data = List(“a”, “b”, “c”)
+writeToFile(“/tmp/out.txt”, data.map(_ + “\n”))</code></pre>
+        </section>
+
+
 			</div>
   		<footer>
         <div class="copyright">
-          Introduction to Scala Workshop &hearts; Girl Develop It Boulder
+          Introduction to Scala Workshop &hearts; Girl Develop It
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
         </div>
       </footer>
