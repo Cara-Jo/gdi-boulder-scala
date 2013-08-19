@@ -9,3 +9,5 @@ line-height: 27px;
 text-align: left;
 vertical-align: top;
 border-top: 3px solid #cccccc; border-left: 3px solid #cccccc;}
+
+.reveal code {height: auto; max-height: 600px;}

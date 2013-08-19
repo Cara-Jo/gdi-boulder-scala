@@ -501,7 +501,223 @@ val data = List(“a”, “b”, “c”)
 writeToFile(“/tmp/out.txt”, data.map(_ + “\n”))</code></pre>
         </section>
 
+        <section>
+          <h2>Break!</h2>
+        </section>
+        <section>
+          <h2>Pattern Matching and Unapply</h2>
+        </section>
+        <section>
+          <h3>Pattern Matching and Unapply</h3>
+          <p class="blue"><code>match</code> is like a switch statement</p>
+<pre><code>val stanza = “Me”
 
+stanza match {
+  case “Dough” => “That stuff that buys me beer”
+  case “Ray” => “The guy that brings me beer”
+  case “Me” => “The guy that drinks the beer”
+  case “Far” => “A long way to get beer”
+  case “So” | “La” => “I think I’ll have a beer”
+  case “Tea” => “No thanks I’m drinking beer”
+  case _ => “Doh!”
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Pattern Matching and Unapply</h3>
+          <p class="blue"><code>match</code> will deconstruct case classes</p>
+<pre><code>sealed abstract class Tree
+case class Branch(left: Tree, right: Tree) extends Tree
+case class Leaf(x: Int) extends Tree
+
+def depthFirstPrint(tree: Tree) {
+  tree match {
+    case Leaf(x) => println(x)
+    case Branch(sin, dex) =>
+      depthFirstPrint(sin)
+      depthFirstPrint(dex)
+  }
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Pattern Matching and Unapply</h3>
+          <p class="blue">Pattern matching is "on" for <code>val</code> declarations and <code>case</code>.</p>
+<pre><code>val 1 = 2    // Compiles!
+
+val Branch(leftTree, rightTree) = aBranch
+val Leaf(x) = aBranch    // error
+
+val csvRow = “Lanny,SpotInfluence,1”
+val Array(name, employer, empno) = csvRow.split(“,”, 3)
+println(employer)
+
+val alpha = Map(“a” -> 1, “b” -> 2, …)
+alpha.foreach {
+  case (c, n) => println(s”’$c’ is the ${ordinal(n)} letter”)
+}</code></pre>
+        </section>
+        <section>
+          <h3>Pattern Matching and Unapply</h3>
+<pre><code>def ordinal(n: Int): String = (n % 10) match {
+  case 1 => s“${n}st”
+  case 2 => s“${n}nd”
+  case 3 => s“${n}rd”
+  case _ => s”${n}th”
+}
+</code></pre>
+          <p class="blue">Under the covers it’s not <code>match</code> that is special</p>
+<pre><code>implicit class MySwitch[A](item: A) {
+  def switch[B](pf: PartialFunction[A,B]): B =
+    if (pf.isDefinedAt(item)) pf(item)
+    else throw new scala.MatchError(“switch did not cover all cases”)
+}
+</code></pre>
+        </section>  
+        <section>
+          <h3>Pattern Matching and Unapply</h3>
+          <p class="blue">Adding <code>def unapply</code> to an object allows it to Pattern Match</p>
+<pre><code>object CapitalWord {
+  def unapply(s: String): Option[String] =
+    if (isCapitalized(s)) Some(s) else None
+
+  def isCapitalized(s: String): Boolean = s == s.capitalize
+}
+
+val mySecretWord = ...
+mySecretWord match {
+  case CapitalWord(_) => s”$mySecretWord is capitalized”
+  case _ => s”$mySecretWord is no capitalized”
+}
+</code></pre>
+        </section>
+        <section>
+          <h2>Implicit Classes</h2>
+        </section>
+        <section>
+          <h3>Implicit Classes</h3>
+          <p>Scala's <code>String</code> is just <code>java.lang.String</code> so how did the capitalize method work?</p>
+          <p class="blue">An implicit class decorates other types and appears to give them extra behavior.</p>
+<pre><code>implicit class Int2Roman(n: Int) {
+  def toRoman: Roman = Roman.toRoman(n)
+}
+
+println( 2013.toRoman )    // Roman(“MMXII”, 2013)
+</code></pre>
+        </section>
+        <section>
+          <h3>Implicit Classes</h3>
+<pre><code>ase class Roman(roman: String, decimal: Int)
+
+object Roman {
+  val bases = List(
+      Roman("M", 1000),      Roman("CM", 900),      Roman("D", 500),      Roman("CD", 400),      Roman("C", 100),
+      Roman("XC", 90),       Roman("L", 50),        Roman("XL", 40),      Roman("X", 10),      Roman("IX", 9),
+      Roman("V", 5),         Roman("IV", 4),        Roman("I", 1)
+   )
+
+   def toRoman(n: Int): Roman = {
+     val sb = StringBuilder.newBuilder
+     var x = n
+ 
+     bases.foreach {
+       case Roman(s, d) =>
+           sb ++= s * (x / d)
+           x %= d
+      }
+
+      Roman(sb.result(), n)
+   }
+}
+</code></pre>
+        </section>
+        <section>
+          <h3>Implicit Classes</h3>
+<pre><code>// Look, Ma!  No mutation!!
+def toRoman(n: Int): Roman = {
+  def worker(x: Int, bs: List[Roman], sb: List[String]): Roman = bs match {
+      case Nil => Roman(sb.reverse.mkString, n)
+      case Roman(s, d) :: rest => worker(x % d, rest, s * (x / d) :: sb)
+    }
+
+  worker(n, bases, List.empty[String])
+}</code></pre>
+        </section>
+        <section>
+          <h2>Standard Container Operations</h2>
+        </section>
+        <section>
+          <h3>Standard Container Operations</h3>
+            <p>Many containers share the following set of operations</p>
+            <p class="blue">unit (Note that this is just instance construction.)</p>
+<pre><code>Some(3)    // Option[Int]
+List(1,2)     // List[Int]
+Set(2,3,2)    // Set[Int]
+Id(42)    // Id[Int]
+</code></pre>
+            <p class="blue">map</p>
+<pre><code>Some(3).map{_.toRoman}    // Option[Int] => Option[Roman]
+List.empty[Int].map{_.toRoman}    // List[Int] => List[Roman]
+4.map{_.toRoman}    //  ??? makes no sense
+Id(4).map{_.toRoman}    // Id[Int] => Id[Roman]
+</code></pre>
+            <p class="blue">foreach</p>
+            <p>Like map but returns Unit.  Used for side-effects (e.g., println)</p>
+          </section>
+          <section>
+            <h3>Standard Container Operations</h3>
+            <p class="blue">flatmap</p>
+<pre><code>def half(x: Int): Option[Int] = if (x % 2 == 0) Some(x/2) else None
+Some(4) map half    // Option[Option[Int]]
+</code></pre>
+            <p class="blue">Consider Map[Name, Empno] and Map[EmpNo, BenefitsId]</p>
+<pre><code>val mbene = n2emp.get(“Lanny”).map{emp2bene.get(_)}    // Wrong shape!  Option[Option[BenefitsId]]</code></pre>
+            <p class="blue">withFilter</p>
+            <p>Given a function A => Boolean filter a container</p>
+
+          </section>
+          <section>
+            <h3>Standard Container Operations</h3>
+            <p>So... uhm... what good is this?</p>
+            <p class="blue">Scala’s for-comprehension is built on these.</p>
+<pre><code>for {
+  x <- ccX                  // extract from container class
+  y = someComputation(x)    // create intermediate values
+  z <- ccZ
+  if pred(y, z)             // test if we should continue
+  w <- ccW
+} yield f(x, y, z, w)       // yield a result</code></pre>
+            <p>Without the <code>yield</code> you just get the side effect of <code>f</code>.</p>
+          </section>
+          <section>
+            <h3>Standard Container Operations</h3>
+            <p>Lifting.  Take operations on types and let them work on Container Types</p>
+<pre><code>// lift2
+for {
+  x <- ccX
+  y <- ccY
+} yield f(x, y)
+</code></pre>
+          </section>
+          <section>
+            <h3>Standard Container Operations</h3>
+<pre><code>def madd(mx: Option[Int], my: Option[Int]): Option[Int] =
+for {
+      x <- mx
+      y <- my
+    } yield x + y
+
+// expands to
+mx.flatMap { x =>
+  my.map { y =>
+    x + y
+  }
+}</code></pre>
+            <p>What would lifting + over two List[Int] look like?</p>
+          </section>
+          <section>
+            <h2>Break!!1!</h2>
+          </section>
 			</div>
   		<footer>
         <div class="copyright">
