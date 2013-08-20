@@ -20,7 +20,7 @@
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/light.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
+
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -39,10 +39,10 @@
 			<div class="slides">
 			  <section>
           <h2>Welcome!</h2>
-          <p>Wifi Info</p>
-          <p><strong>Network:</strong> Network Name</p>
-          <p><strong>Password:</strong> Network Password</p>
-          
+          <p><strong><string class="blue">Wifi Info</strong></p>
+          <p><strong>Network:</strong> Fish</p>
+          <p><strong>Password:</strong> SpottedZebraFish</p>
+
         </section>
 
         <!-- Opening slide -->
@@ -77,13 +77,14 @@
         <section class="hide-pdf">
           <h3>About your instructor</h3>
           <div class="left">
-            <h4>Instrutor Name</h4>
+            <h4>Lanny Ripple</h4>
             <ul>
-              <li>Detail</li>
-              <li>Detail</li>
-              <li>Detail</li>
-              <li>Twitter: </li>
-              <li>E-mail: </li>
+              <li>VP of Engineering, SpotRight</li>
+              <li>20 years of sysadmining, developing, and managing at EDS, Cisco, Macquarie, and here.</li>
+              <li>Other fulltime job -- Husband and father.</li>
+              <ul><li> <string class="blue">/wave!</string> Solana(10), Evara(8), David(5), Ella(3)</li></ul>
+              <li>Twitter: lannyripple (but I don't twitter)</li>
+              <li>E-mail: lanny@spotright.com</li>
             </ul>
           </div>
         </section>
@@ -95,43 +96,50 @@
             <p><small>Common data structures - List, Vector, Set, Map, Option, Builders</small></p>
             <p><small>Basic Input/Output</small></p>
           <h4>Hour 2</h4>
-            <p><small>Case classes, Pattern Matching and match, Unapply</small></p>
+            <p><small>Pattern Matching and Unapply</small></p>
+            <p><small>Implicit Classes</small></p>
             <p><small>Standard Container Operations - foreach, map, flatMap, for comprehensions</small></p>
           <h4>Hour 3</h4>
-            <p><small>Write a real program.</small></p>
-            <p><small>Q/A &amp; open topics.</small></p>
+            <p><small>A Real program.</small></p>
+            <p><small>Q &amp; A and Open topics.</small></p>
         </section>
         <section>
           <h2>History</h2>
         </section>
+        <section>
         <section class="timeline">
           <h3>History</h2>
-            <p class="left-align"><strong class="blue">1928</strong> - David Hilbert’s Entscheidungsproblem (Decision Problem)</p>
+          <h4 class="left-align"><string class="blue">1928</strong></h4>
+            <p class="left-align">David Hilbert’s Entscheidungsproblem (Decision Problem)</p>
             <ul>
               <li><small>Can you mechanically determine if a logical statement is universally valid given the axioms of logic?</small></li>
-            </ul>            
-            <p class="left-align"><strong class="blue">1936</strong> - Alonzo Church’s untyped λ-calculus</p>
+            </ul>
+          <h4 class="left-align"><string class="blue">1936</strong></h4>
+            <p class="left-align">Alonzo Church’s untyped λ-calculus</p>
             <ul>
               <li><small>Variables, abstraction, application</small></li>
             </ul>
-            
-        </section>
-        <section class="timeline">
-          <h3>History</h3>
-          <p class="left-align"><strong class="blue">1936</strong> - Alan Turing’s Universal Turing Machine (UTM)</p>
+          <p class="left-align">Alan Turing’s Universal Turing Machine (UTM)</p>
             <ul>
               <li><small>A moving tape under the control of a state-machine</small></li>
               <li><small>Turing showed that a UTM and the λ-calculus calculated the same set of functions</small></li>
             </ul>
-            <p class="left-align"><strong class="blue">1952</strong> - Church-Turing Thesis</p>
+        </section>
+
+        <section class="timeline">
+          <h3>History</h3>
+          <h4 class="left-align"><string class="blue">1952</strong></h4>
+            <p class="left-align">Kleene states the Church-Turing Thesis</p>
             <ul>
               <li><small>A function is algorithmically computable if it can be computed by a Turing machine</small></li>
               <li><small>A system of computation is “Turing Complete” if it can simulate a Universal Turing Machine.  By the Church-Turing Thesis the system can then calculate any effectively computable function.</small></li>
             </ul>
         </section>
+        </section>
+        <section>
         <section>
           <h3>Everything that can be calculated is calculable with a UTM.</h3>
-          <h4>Let's go home</h4>
+          <h4>Woo!  All done.  Let's go home!</h4>
           <div class="left" style="width:45%;">
             <p class="blue">Imperative</p>
             <ul>
@@ -155,7 +163,7 @@
        </section>
         <section>
           <h3>Everything that can be calculated is calculable with a UTM.</h3>
-          <h4>Let's go home</h4>
+          <h4>Woo!  All done.  Let's go home!</h4>
           <div class="left" style="width:45%;">
             <p class="blue">Functional</p>
             <ul>
@@ -174,9 +182,11 @@
             </ul>
           </div>
        </section>
+       </section>
        <section>
         <h2>Syntax and Control Structures</h2>
       </section>
+      <section>
       <section class="timeline">
         <h3>Scala Syntax (It’s Java++)</h3>
         <ul>
@@ -185,10 +195,14 @@
             <ul>
               <li>Everything is an Object. (No primitive types like int or double)</li>
               <li>Types occur after the identifier
-                <ul>
-                  <li><span class="blue">Java:</li> Map&lt;String,Int&gt; mymap = new Map&lt;String,Int&gt;();</li>
-                  <li><span class="blue">Scala:</li> val mymap: Map[String,Int] = Map.empty[String,Int]</li>
-                </ul>
+              <pre><code class="java">// Java
+Map&lt;String,Int&gt; mymap = new HashMap&lt;String,Int&gt;()
+public int addEm(int x, int y) { return x + y; }
+              </code></pre>
+              <pre><code class="scala">// Scala
+val mymap: Map[String,Int] = new HashMap[String,Int]()
+def addEm(x: Int, y: Int): Int = x + y
+              </code></pre>
               </li>
             </ul>
           </li>
@@ -200,13 +214,12 @@
         <li><span class="blue">Biggest differences:</span>
             <ul>
               <li>Local Type Inference
-                <ul>
-                  <li>val mymap = Map.empty[String,Int]</li>
-                  <li>val n = 0</li>
-                  <li>val s = "String"</li>
-                </ul>
+                <pre><code class="scala">val mymap = Map.empty[String,Int]
+val n = 0
+val s = "String"
+</code></pre>
               </li>
-              <li>Vals are immutable.  Vars are variable.</li>
+              <li>Makes a distinction between vals (immutable) and vars (mutable).</li>
               <li>Pattern matching, Case classes, Extractors.</li>
               <li>Functions as first-class values.</li>
               <li>Implicits</li>
@@ -216,23 +229,26 @@
           </li>
         </ul>
       </section>
+      </section>
       <section>
         <h3>Scala Syntax - Flow Control</h3>
         <p class="blue">If</p>
-<pre><code>if (count > 0) count -= 1 else println(“done”)
-val len = if (xs == null) 0 else xs.length</code></pre>
+<pre><code class="scala">if (count &gt; 0) count -= 1 else println(“done”)
 
+val len = if (xs == null) 0 else xs.length</code></pre>
 <p class="blue">While</p>
-<pre><code>val c = 0
+<pre><code class="scala">val c = 0
 while (c < xs.size) {
-  val elt = xs(c)
+  val elt = xs(c)    // Not xs[c] as in many languages.
   println(s“I see a $elt”)
-c += 1
-}</code></pre>
+  c += 1
+}
+</code></pre>
 <p class="blue">For</p>
-<pre><code>or (elt <- xs) {
-println(s”I see a $elt”)
-}</code></pre>
+<pre><code class="scala">for (elt <- xs) {
+  println(s”I see a $elt”)
+}
+</code></pre>
       </section>
       <section>
         <h3>Scala Syntax - Literals</h3>
@@ -309,55 +325,96 @@ println(s”I see a $elt”)
       <section>
         <h3>Scala Syntax - Value Types</h3>
         <p class="blue">Tuples</p>
-<pre><code>val pair = (3, ‘A’)
+<pre><code class="scala">val pair = (3, ‘A’)
 println(pair._1)    // 3
+
 val quint = (1, 2, 3, 4, “five”)
 println(quint._5)     // “five”
+
 quint == (1, 2, 3, 4, “five”)    // true</code></pre>
-<p class="blue">Case Class</p>
-<pre><code>case class Beatles(john: Int, paul: Int, george: Int, ringo: String)
+<p class="blue">Case Classes</p>
+<pre><code class="scala">case class Beatles(john: Int, paul: Int, george: Int, ringo: String)
+
 val fab = Beatles(1, 2, 3, “four”)
 println(fab.george)    // 3
+
 fab == Beatles(1, 2, 3, “four”)    // true</code></pre>
       </section>
       <section>
+      <section>
         <h3>Scala Syntax - Functions</h3>
-<pre><code>def name(argName: Type, ...): returnType = body
+<pre><code class="scala">def name(argName: Type, ...): returnType = body</code></pre>
+<pre><code class="scala">def gcd(x: Int, y: Int): Int = if (y == 0) x else gcd(y, x % y)
 
-def gcd(x: Int, y: Int): Int =
-if (y == 0) x else gcd(y, x % y)
-
+/**
+ * Steps for the Extended Euclidean Algorithm.
+ */
 def gcdSteps(x: Int, y: Int): List[(Int, Int)] = {
-  def worker(x: Int, y: Int, steps: List[(Int,Int)]): List[(Int,Int)] = {
+  type StepList = List[(Int,Int)]    // easier to read alias
+
+  def worker(x: Int, y: Int, steps: StepList): StepList = {
     val step = (x,y)
 
-    if (y != 0)
-worker(y, x % y, step :: steps)
-else
-(step :: steps).reverse
-}
+    if (y == 0)
+      (step :: steps).reverse
+    else
+      worker(y, x % y, step :: steps)
+  }
 
   worker(x, y, List.empty[(Int,Int)])
 }</code></pre>
         </section>
         <section>
           <h3>Scala Syntax - Functions</h3>
-          <p class="blue">Scala likes functions</p>
-<pre><code>val f = {x: Int => s“I’m only ${x} and a ha’f years old.”}
+          <p class="blue">Scala likes functions (a lot)</p>
+<pre><code class="scala">val f = {x: Int =&gt; s“I’m only ${x} and a ha’f years old.”}
 val g = “I’m only “ + (_:Int) + “ and a ha’f years old.”
 
 val mkTitle = (_:Int).toString + “. “ + (_: String)
+mkTitle(3, "Syntax")    // "3. Syntax"
 
-val words = List(“apple”, “annana”, “ball”)
-val ucWords = words.map(_ + “\n”)</code></pre>
-          <p>If only one argument can use () or {}</p>
-          <p>a b c d e ... ⇒ a.b(c).d(e)...</p>
-<pre><code>words map {_+”\n”} filter {_.length > 6}</code></pre>
+// If Scala can figure out the types you don't need to tell it.
+val words = List(“apple”, “annana”, “ball”, "carrot")
+val capWords = words.map(_.capitalize + “\n”)</code></pre>
         </section>
         <section>
+          <h3>Scala Syntax - Functions</h3>
+          <ul>
+              <li>If a function takes only one argument you can use () or {}.</li>
+<pre><code class="scala">println("Hi")
+
+println {
+    var x = 7
+    x += 3
+    x.toString
+}
+</code></pre>
+              <li>No-dot Style: a b c d e ... =&gt; a.b(c).d(e)...
+<pre><code class="scala">words map {_ + ”\n”} filter {_.length &gt; 6}
+
+words.map{_ + "\n"}.filter{_.length &gt; 6}
+
+words.map(_ + "\n").filter(_.length &gt; 6)
+</code></pre>
+          </ul>
+      </section>
+        <section>
+          <h3>Scala Syntax - Functions</h3>
+          <p class="blue">Not going to cover in this intro...</p>
+          <ul>
+              <li>default arguments</li>
+              <li>multiple argument lists</li>
+              <li>partial application</li>
+              <li>currying</li>
+              <li>methods vs. functions</li>
+          </ul>
+      </section>
+      </section>
+        <section>
+        <section>
           <h3>Scala Syntax - Classes and Objects</h3>
-          <p class="blue">Top level elements must be a class or an object. </p>
-<pre><code>class JackInTheBox(name: String) {
+          <p class="blue">Top level elements (in a file) must be a class or an object. </p>
+<pre><code class="scala">class JackInTheBox(name: String) {
   private var isPoppped = false
 
   def pop() {
@@ -376,7 +433,7 @@ val ucWords = words.map(_ + “\n”)</code></pre>
         <section>
           <h3>Scala Syntax - Classes and Objects</h3>
           <p class="blue">Objects are singletons, instantiated on first reference, and replace Java’s ‘static’ concept.</p>
-<pre><code>object JackInTheBox {
+<pre><code class="scala">object JackInTheBox {
   private var _action = “pop”
 
   def action: String = _action
@@ -387,36 +444,51 @@ val ucWords = words.map(_ + “\n”)</code></pre>
     rv
   }
 }</code></pre>
+          </section>
+        <section>
+          <h3>Scala Syntax - Classes and Objects</h3>
+          <p class="blue">Example session</p>
+<pre><code class="scala">val jack = new JackInTheBox("The weasel")
+jack.pop()    // "The weasel pops!"
+jack.pop()    // "nope"
+JackInTheBox.setAction("quack")
+jack.reset()
+jack.pop()    // "The weasel quacks!"
+</code></pre>
+        </section>
         </section>
         <section>
           <h2>Common Data Structures</h2>
         </section>
         <section>
+        <section>
           <h3>Common Data Structures</h3>
           <p class="blue">List - it’s a stack</p>
-<pre><code>val xs = List(1, 2, 3)
+<pre><code class="scala">val xs = List(1, 2, 3)
 println(xs)    // List(1, 2, 3)
-println(xs.sum)    // 6</code></pre>
+val ys = 42 :: xs    // List(42, 1, 2, 3)
+ys.head    // 42
+</code></pre>
           <p class="blue">Vector - like Java Array</p>
           <p class="green">Immutable</p>
-<pre><code>val xs = Vector(4, 5, 6)
+<pre><code class="scala">val xs = Vector(4, 5, 6)
 println(xs(2))    // 6
 xs(2) = 1    // error
 xs.updated(2, 1)    // Vector(4, 5, 1)</code></pre>
           <p class="green">Can often just use an Array (but corner cases)</p>
-<pre><code>val xs = Array(7, 8, 9)
+<pre><code class="scala">val xs = Array(7, 8, 9)
 println(xs)    // [I@3e9fd86</code></pre>
         </section>
         <section>
           <h3>Common Data Structures</h3>
           <p class="blue">Set - unordered collection</p>
           <p class="green">no duplicates</p>
-<pre><code>val xs = Set(1, 2, 3, 2, 1)
+<pre><code class="scala">val xs = Set(1, 2, 3, 2, 1)
 println(xs)    // Set(1, 2, 3)
 xs(2)    // true
 xs(4)    // false</code></pre>
           <p class="blue">Map - A dictionary</p>
-<pre><code>val kvs = Map(“A” -> List(“Apple”, “Anana”), “B” -> List(“Ball”))
+<pre><code class="scala">val kvs = Map(“A” -&gt; List(“Apple”, “Anana”), “B” &gt; -List(“Ball”))
 kvs(“B”)    // List(“Ball”)
 kvs(“C”)    // error
 kvs.get(“B”)    // Some(List(“Ball”))
@@ -426,79 +498,74 @@ kvs.get(“C”)    // None</code></pre>
           <h3>Common Data Structures</h3>
           <p class="blue">Option - optional value</p>
           <p class="green">Values of Some(item) and None</p>
-<pre><code>val mCount = Some(10)
+<pre><code class="scala">val mCount = Some(10)
 mCountount.get    // 10
 m.isDefined    // true
+
 val mSize = Option.empty[Int]
 mSize.get    // error
 mSize.isEmpty    // true
 mSize.getOrElse(12)    // 12</code></pre>
-          <p class="green">Turns partial functions into total functions</p>
-<pre><code>val args = Array(“--verbose”, “--force”)
-val third = args(2)    // error
-val mThird = args.lift(2)    // None: Option[Int]</code></pre>
-          <p class="green">Unlike <code>null</code> is transformation friendly<p>
-<pre><code>names.map{javaMap.get(_)(data)}    // boom
-names.map{scalaMap.get(_).map{_(data)}    // works</code></pre>
+          <p class="green">Unlike <code class="scala">null</code>, Option is transformation friendly<p>
+<pre><code class="scala">names.map{javaMap.get(_)(data)}    // NullPointerException
+names.map{scalaMap.get(_).map{_(data)}.flatten    // works!</code></pre>
         </section>
         <section>
           <h3>Common Data Structures</h3>
+          <p class="blue">Builders</p>
           <ul style="font-size: 80%;">
-            <li>Builders
+            <li>List (et al.) is immutable.  List insert is fast only at the head but convenient to construct by appending.  How to resolve?</li>
+            <li>A builder builds an immutable data structure.
               <ul>
-                <li>List (et al.) is immutable.  List insert is fast only at the head but convenient to construct by appending.  How to resolve?</li>
-                <li>A builder builds an immutable data structure.
-                  <ul>
-                    <li>builder += item</li>
-                    <li>builder ++= TraversableOnce(item1, item2, …)</li>
-                    <li>builder.result()</li>
-                  </ul>
-                </li>
-                <li>Builders for Lists, Vectors, Arrays, Sets, Maps, Strings*, and probably others</li>
+                <li>builder += item</li>
+                <li>builder ++= TraversableOnce(item1, item2, …)</li>
+                <li>builder.result()</li>
               </ul>
             </li>
+            <li>Builders for Lists, Vectors, Arrays, Sets, Maps, Strings (via StringBuilder), etc.</li>
           </ul>
-<pre><code>val bldr = List.newBuilder[Int]
+<pre><code class="scala">val bldr = List.newBuilder[Int]
 bldr ++= 1 to 10
 val myList = bldr.result()
 
 // although in this tiny example we would just
 (1 to 10).toList</code></pre>
         </section>
+        </section>
         <section>
           <h2>Basic Input/Output</h2>
         </section>
         <section>
-          <h3>Input/Output</h3>
+        <section>
+          <h3>Basic Input/Output</h3>
           <p class="blue">Scala takes basic I/O from Java</p>
-<pre><code>println(“Hello, world!”)
+<pre><code class="scala">println(“Hello, world!”)
 System.err.println(“Bzzzt!”)</code></pre>
         <p class="blue">Scala has an easy way to read from a file</p>
-<pre><code>val handle = io.Source.fromFile(“/tmp/data.txt”)
+<pre><code class="scala">val handle = io.Source.fromFile(“/tmp/data.txt”)
 val lines = handle.getLines
 
-  try {
-lines.foreach { line => println(line.reverse) }
+try {
+  lines.foreach { line =&gt; println(line.reverse) }
 }
-  finally handle.close()</code></pre>
-
-
+finally handle.close()</code></pre>
         </section>
         <section>
-          <h3>Input/Output</h3>
+          <h3>Basic Input/Output</h3>
           <p class="blue">Scala just does the Java thing for output</p>
-<pre><code>def writeToFile(fn: String, data: TraversableOnce[String]) {
+<pre><code class="scala">def writeToFile(fn: String, data: TraversableOnce[String]) {
   import java.io.{PrintWriter, File}
   val pw = new PrintWriter(new File(fn))
 
   try {
-for (s <- data) { pw.write(s) }
-}
+    for (s &lt;- data) { pw.write(s) }
+  }
   finally pw.close()
 }
 
 val data = List(“a”, “b”, “c”)
 writeToFile(“/tmp/out.txt”, data.map(_ + “\n”))</code></pre>
+        </section>
         </section>
 
         <section>
@@ -508,32 +575,34 @@ writeToFile(“/tmp/out.txt”, data.map(_ + “\n”))</code></pre>
           <h2>Pattern Matching and Unapply</h2>
         </section>
         <section>
+        <section>
           <h3>Pattern Matching and Unapply</h3>
-          <p class="blue"><code>match</code> is like a switch statement</p>
-<pre><code>val stanza = “Me”
+          <p class="blue"><code class="scala">match</code> is like a switch statement</p>
+<pre><code class="scala">val stanza = “Me”
 
 stanza match {
-  case “Dough” => “That stuff that buys me beer”
-  case “Ray” => “The guy that brings me beer”
-  case “Me” => “The guy that drinks the beer”
-  case “Far” => “A long way to get beer”
-  case “So” | “La” => “I think I’ll have a beer”
-  case “Tea” => “No thanks I’m drinking beer”
-  case _ => “Doh!”
+  case “Dough” =&gt; “That stuff that buys me beer”
+  case “Ray” =&gt; “The guy that brings me beer”
+  case “Me” =&gt; “The guy that drinks the beer”
+  case “Far” =&gt; “A long way to get beer”
+  case “So” | “La” =&gt; “I think I’ll have a beer”
+  case “Tea” =&gt; “No thanks I’m drinking beer”
+  case _ =&gt; “Doh!”
 }
 </code></pre>
         </section>
         <section>
           <h3>Pattern Matching and Unapply</h3>
-          <p class="blue"><code>match</code> will deconstruct case classes</p>
-<pre><code>sealed abstract class Tree
+          <p class="blue"><code class="scala">match</code> will deconstruct case classes</p>
+<pre><code class="scala">sealed abstract class Tree
 case class Branch(left: Tree, right: Tree) extends Tree
 case class Leaf(x: Int) extends Tree
 
 def depthFirstPrint(tree: Tree) {
   tree match {
-    case Leaf(x) => println(x)
-    case Branch(sin, dex) =>
+    case Leaf(x) =&gt; println(x)
+
+    case Branch(sin, dex) =&gt;
       depthFirstPrint(sin)
       depthFirstPrint(dex)
   }
@@ -542,63 +611,70 @@ def depthFirstPrint(tree: Tree) {
         </section>
         <section>
           <h3>Pattern Matching and Unapply</h3>
-          <p class="blue">Pattern matching is "on" for <code>val</code> declarations and <code>case</code>.</p>
-<pre><code>val 1 = 2    // Compiles!
+          <p class="blue">Pattern matching is "on" for <code class="scala">val</code> and <code class="scala">case</code> declarations.</p>
+<pre><code class="scala">val 1 = 2    // Compiles!
 
 val Branch(leftTree, rightTree) = aBranch
 val Leaf(x) = aBranch    // error
 
 val csvRow = “Lanny,SpotInfluence,1”
 val Array(name, employer, empno) = csvRow.split(“,”, 3)
-println(employer)
+println(employer)    // SpotInfluence
 
-val alpha = Map(“a” -> 1, “b” -> 2, …)
+val alpha = Map(“a” -&gt; 1, “b” -&gt; 2, …)
 alpha.foreach {
-  case (c, n) => println(s”’$c’ is the ${ordinal(n)} letter”)
-}</code></pre>
+  case (c, n) =&gt; println(s”’$c’ is the ${ordinal(n)} letter”)
+}
+
+def ordinal(n: Int): String = (n % 10) match {
+  case 1 =&gt; s“${n}st”
+  case 2 =&gt; s“${n}nd”
+  case 3 =&gt; s“${n}rd”
+  case _ =&gt; s”${n}th”
+}
+</code></pre>
         </section>
         <section>
           <h3>Pattern Matching and Unapply</h3>
-<pre><code>def ordinal(n: Int): String = (n % 10) match {
-  case 1 => s“${n}st”
-  case 2 => s“${n}nd”
-  case 3 => s“${n}rd”
-  case _ => s”${n}th”
-}
-</code></pre>
-          <p class="blue">Under the covers it’s not <code>match</code> that is special</p>
-<pre><code>implicit class MySwitch[A](item: A) {
+          <p class="blue">Under the covers it’s not <code class="scala">match</code> that is special</p>
+<pre><code class="scala">// We'll cover implicit class in a bit.
+implicit class MySwitch[A](item: A) {
+
   def switch[B](pf: PartialFunction[A,B]): B =
     if (pf.isDefinedAt(item)) pf(item)
-    else throw new scala.MatchError(“switch did not cover all cases”)
+    else
+      throw new scala.MatchError(“switch did not cover all cases”)
 }
 </code></pre>
-        </section>  
+        </section>
         <section>
           <h3>Pattern Matching and Unapply</h3>
-          <p class="blue">Adding <code>def unapply</code> to an object allows it to Pattern Match</p>
-<pre><code>object CapitalWord {
+          <p class="blue">Adding <code class="scala">def unapply</code> to an object allows it to Pattern Match</p>
+<pre><code class="scala">object CapitalWord {
   def unapply(s: String): Option[String] =
     if (isCapitalized(s)) Some(s) else None
 
   def isCapitalized(s: String): Boolean = s == s.capitalize
 }
 
-val mySecretWord = ...
+val mySecretWord = ???
+
 mySecretWord match {
-  case CapitalWord(_) => s”$mySecretWord is capitalized”
-  case _ => s”$mySecretWord is no capitalized”
+  case CapitalWord(_) =&gt; s”$mySecretWord is capitalized”
+  case _ =&gt; s”$mySecretWord is not capitalized”
 }
 </code></pre>
+        </section>
         </section>
         <section>
           <h2>Implicit Classes</h2>
         </section>
         <section>
+        <section>
           <h3>Implicit Classes</h3>
-          <p>Scala's <code>String</code> is just <code>java.lang.String</code> so how did the capitalize method work?</p>
+          <p>Scala's <code class="scala">String</code> is just <code class="scala">java.lang.String</code> so how did the capitalize method work?</p>
           <p class="blue">An implicit class decorates other types and appears to give them extra behavior.</p>
-<pre><code>implicit class Int2Roman(n: Int) {
+<pre><code class="scala">implicit class Int2Roman(n: Int) {
   def toRoman: Roman = Roman.toRoman(n)
 }
 
@@ -607,19 +683,21 @@ println( 2013.toRoman )    // Roman(“MMXII”, 2013)
         </section>
         <section>
           <h3>Implicit Classes</h3>
-<pre><code>ase class Roman(roman: String, decimal: Int)
+<pre><code class="scala">ase class Roman(roman: String, decimal: Int)
 
 object Roman {
   val bases = List(
-      Roman("M", 1000),      Roman("CM", 900),      Roman("D", 500),      Roman("CD", 400),      Roman("C", 100),
-      Roman("XC", 90),       Roman("L", 50),        Roman("XL", 40),      Roman("X", 10),      Roman("IX", 9),
-      Roman("V", 5),         Roman("IV", 4),        Roman("I", 1)
-   )
+    Roman("M", 1000),  Roman("CM", 900),  Roman("D", 500),
+    Roman("CD", 400),  Roman("C", 100),   Roman("XC", 90),
+    Roman("L", 50),    Roman("XL", 40),   Roman("X", 10),
+    Roman("IX", 9),    Roman("V", 5),     Roman("IV", 4),
+    Roman("I", 1)
+  )
 
    def toRoman(n: Int): Roman = {
      val sb = StringBuilder.newBuilder
      var x = n
- 
+
      bases.foreach {
        case Roman(s, d) =>
            sb ++= s * (x / d)
@@ -633,100 +711,140 @@ object Roman {
         </section>
         <section>
           <h3>Implicit Classes</h3>
-<pre><code>// Look, Ma!  No mutation!!
+<pre><code class="scala">// Look, Ma!  No mutation!!
 def toRoman(n: Int): Roman = {
-  def worker(x: Int, bs: List[Roman], sb: List[String]): Roman = bs match {
+  def worker(x: Int, bs: List[Roman], sb: List[String]): Roman =
+    bs match {
       case Nil => Roman(sb.reverse.mkString, n)
-      case Roman(s, d) :: rest => worker(x % d, rest, s * (x / d) :: sb)
+      case Roman(s, d) :: rest =>
+        worker(x % d, rest, s * (x / d) :: sb)
     }
 
   worker(n, bases, List.empty[String])
 }</code></pre>
         </section>
+        </section>
         <section>
           <h2>Standard Container Operations</h2>
         </section>
         <section>
+        <section>
           <h3>Standard Container Operations</h3>
             <p>Many containers share the following set of operations</p>
             <p class="blue">unit (Note that this is just instance construction.)</p>
-<pre><code>Some(3)    // Option[Int]
+<pre><code class="scala">Some(3)    // Option[Int]
 List(1,2)     // List[Int]
 Set(2,3,2)    // Set[Int]
 Id(42)    // Id[Int]
 </code></pre>
             <p class="blue">map</p>
-<pre><code>Some(3).map{_.toRoman}    // Option[Int] => Option[Roman]
+<pre><code class="scala">Some(3).map{_.toRoman}    // Option[Int] => Option[Roman]
 List.empty[Int].map{_.toRoman}    // List[Int] => List[Roman]
 4.map{_.toRoman}    //  ??? makes no sense
 Id(4).map{_.toRoman}    // Id[Int] => Id[Roman]
 </code></pre>
-            <p class="blue">foreach</p>
-            <p>Like map but returns Unit.  Used for side-effects (e.g., println)</p>
           </section>
           <section>
             <h3>Standard Container Operations</h3>
-            <p class="blue">flatmap</p>
-<pre><code>def half(x: Int): Option[Int] = if (x % 2 == 0) Some(x/2) else None
-Some(4) map half    // Option[Option[Int]]
+            <p class="blue">foreach</p>
+            <p>Like map but returns Unit.  (Used for side-effects.)</p>
+<pre><code class="scala">Some(3) map println    // Option[Int] => Unit
 </code></pre>
-            <p class="blue">Consider Map[Name, Empno] and Map[EmpNo, BenefitsId]</p>
-<pre><code>val mbene = n2emp.get(“Lanny”).map{emp2bene.get(_)}    // Wrong shape!  Option[Option[BenefitsId]]</code></pre>
-            <p class="blue">withFilter</p>
+            <p class="blue">flatmap</p>
+<pre><code class="scala">def half(x: Int): Option[Int] =
+  if (x % 2 == 0) Some(x/2) else None
+
+Some(4) map half    // Option[Option[Int]]
+Some(4) flatMap half    // Option[Int]
+</code></pre>
+            <p class="blue">filter</p>
             <p>Given a function A => Boolean filter a container</p>
+<pre><code class="scala">List(1,2,3) filter {_ > 1}    // List(2,3)
+</code></pre>
+          </section>
+          <section>
+            <h3>Standard Container Operations</h3>
+<pre><code class="scala">val empno = Map("Lanny", 1)
+val benids = Map(1, 773221)
+
+// Won't work.  Using map gives Option[Option[Int]]
+val mBenid: Option[Int] =
+  n2emp.get(“Lanny”).map{emp2bene.get(_)} // Option[Option[Int]]
+
+val mBenid: Option[Int] =
+  n2emp.get(“Lanny”).flatMap{emp2bene.get(_)}    // works
+
+val mOtherBenid: Option[Int] =
+  n2emp.get(“Fred”).flatMap{emp2bene.get(_)}    // works: None
+</code></pre>
 
           </section>
           <section>
             <h3>Standard Container Operations</h3>
             <p>So... uhm... what good is this?</p>
             <p class="blue">Scala’s for-comprehension is built on these.</p>
-<pre><code>for {
+<pre><code class="scala">for {
   x <- ccX                  // extract from container class
   y = someComputation(x)    // create intermediate values
   z <- ccZ
   if pred(y, z)             // test if we should continue
   w <- ccW
 } yield f(x, y, z, w)       // yield a result</code></pre>
-            <p>Without the <code>yield</code> you just get the side effect of <code>f</code>.</p>
+            <p>Without the <code class="scala">yield</code> you just get the side effect of <code class="scala">f</code>.</p>
           </section>
           <section>
             <h3>Standard Container Operations</h3>
-            <p>Lifting.  Take operations on types and let them work on Container Types</p>
-<pre><code>// lift2
+            <p>How to take an operation on basic Types and make it work on Container Types?</p>
+            <p><strong><string class="blue">Lifting</strong></p>
+<pre><code class="scala">// lift2
 for {
   x <- ccX
   y <- ccY
 } yield f(x, y)
+
+// lift3
+for {
+  x <- ccX
+  y <- ccY
+  z <- ccZ
+} yield g(x, y, z)
 </code></pre>
           </section>
           <section>
             <h3>Standard Container Operations</h3>
-<pre><code>def madd(mx: Option[Int], my: Option[Int]): Option[Int] =
-for {
-      x <- mx
-      y <- my
-    } yield x + y
+            <p>How to add two Option[Int]s.</p>
+<pre><code class="scala">def madd(mx: Option[Int], my: Option[Int]): Option[Int] =
+  for {
+    x <- mx
+    y <- my
+  } yield x + y
 
-// expands to
-mx.flatMap { x =>
-  my.map { y =>
-    x + y
-  }
-}</code></pre>
+</code></pre>
             <p>What would lifting + over two List[Int] look like?</p>
+<pre><code class="scala">def ladd(xs: List[Int], ys: List[Int]): List[Int] =
+  for {
+    x <- xs
+    y <- ys
+  } yield x + y
+</code></pre>
+          </section>
           </section>
           <section>
-            <h2>Break!!1!</h2>
+            <h2>Break!</h2>
           </section>
+        <section>
+          <h2>A Real Program</h2>
+        </section>
+        <section>
+        <section>
+          <h2>A Real Program</h2>
+          <p>build.sbt</p>
+<pre><code class="no-highlight">import AssemblyKeys._
 
-          <section>
-            <h2>A Real Program</h2>
-          </section>
-          <section>
-            <h3>A Real Program</h3>
-            <p>Java Swing - Java’s GUI Widget Toolkit</p>
-            <p>Scala has put sugar on it</p>
-<pre><code># build.sbt
+assemblySettings
+
+mainClass := Some(“com.gdi.tictactoe.TicTacToe”)
+
 organization := "com.gdi"
 
 name := "tictactoe"
@@ -739,60 +857,62 @@ libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-swing" % scalaVersion.value
 )
 </code></pre>
+          <p>project/assembly.sbt</p>
+<pre><code class="no-highlight">
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.9.1")
+</code></pre>
           </section>
-          <section>
-            <h3>A Real Program</h3>
-<pre><code># src/main/scala/com/gdi/tictactoe/GridPanelDemo.scala
-package com.gdi.tictactoe
+        <section>
+          <h2>A Real Program</h2>
+          <p>src/main/scala/com/gdi/tictactoe/Model.scala</p>
+<pre><code class="scala">package com.gdi.tictactoe
 
-// This code is from http://scalatutorial.de/topic31.html
 import scala.swing._
 
-object GridPanelDemo extends SimpleSwingApplication {
+class Model {
 
-  def top = new MainFrame {
-    title = "GridPanel"
+  private var moveCount = 1
 
-    contents = new GridPanel(3,2) {
-      for {
-        row <- 1 to 3
-        col <- 1 to 2
-      } contents += new Button(s"$row,$col")
-    }
+  val sides = Set("X", "O")
+
+  def whosTurn(): String = if (moveCount % 2 == 1) "X" else "O"
+
+  def nextTurn() {
+    moveCount += 1
   }
 }
 </code></pre>
           </section>
-          <section>
-            <h3>A Real Program</h3>
-            <ul>
-              <li>Run with: <code>sbt run</code></li>
-              <li>Shiny!</li>
-              <li>But... it doesn’t do a lot.</li>
-              <li>Modern systems separate handling user input from display.  This is often done with a Model component, that models the system state, a View component that updates the display when the Model is updated (or when told to), and a Controller component that updates the Model.  Abbreviated MVC.</li>
-              <li>We’re going to use (MV)C where the Controller acts on the input and drives the Model and View.</li>
-            </ul>
-          </section>
-          <section>
-            <h3>A Real Program - Main</h3>
-<pre><code># src/main/scala/com/gdi/tictactoe/TicTacToe.scala
-package com.gdi.tictactoe
+        <section>
+          <h2>A Real Program</h2>
+          <p>src/main/scala/com/gdi/tictactoe/View.scala</p>
+<pre><code class="scala">package com.gdi.tictactoe
 
 import scala.swing._
-import scala.swing.event._
 
-object TicTacToe {
+class View extends MainFrame {
+  val panel = new GridPanel(3, 3)
 
-  def main(av: Array[String]) {
-    new Controller
+  val buttons = Array.tabulate(3, 3) {
+    case (r, c) =>
+      new Button("")
   }
+
+  buttons.flatten.foreach {
+    b =>
+      panel.contents += b
+  }
+
+  title = "TicTacToe"
+  contents = panel
+  visible = true
 }
 </code></pre>
           </section>
-          <section>
-            <h3>A Real Program - Controller</h3>
-<pre><code># src/main/scala/com/gdi/tictactoe/Controller.scala
-package com.gdi.tictactoe
+        <section>
+          <h2>A Real Program</h2>
+          <p>src/main/scala/com/gdi/tictactoe/Controller.scala</p>
+<pre><code class="scala">package com.gdi.tictactoe
 
 import scala.swing._
 import scala.swing.event._
@@ -818,82 +938,34 @@ class Controller {
 }
 </code></pre>
           </section>
-          <section>
-            <h3>A Real Program - Model</h3>
-<pre><code># src/main/scala/com/gdi/tictactoe/Model.scala
-package com.gdi.tictactoe
+        <section>
+          <h2>A Real Program</h2>
+          <p>src/main/scala/com/gdi/tictactoe/TicTacToe.scala</p>
+<pre><code class="scala">package com.gdi.tictactoe
 
 import scala.swing._
+import scala.swing.event._
 
-class Model {
+object TicTacToe {
 
-  private var moveCount = 1
-
-  val sides = Set("X", "O")
-
-  def whosTurn(): String = if (moveCount % 2 == 1) "X" else "O"
-
-  def nextTurn() {
-    moveCount += 1
+  def main(av: Array[String]) {
+    new Controller
   }
 }
 </code></pre>
           </section>
-          <section>
-            <h3>A Real Program - View</h3>
-<pre><code># src/main/scala/com/gdi/tictactoe/View.scala
-package com.gdi.tictactoe
-
-import scala.swing._
-
-class View extends MainFrame {
-  val panel = new GridPanel(3, 3)
-
-  val buttons = Array.tabulate(3, 3) {
-    case (r, c) =>
-      new Button("")
-  }
-
-  buttons.flatten.foreach {
-    b =>
-      panel.contents += b
-  }
-
-  title = "TicTacToe"
-  contents = panel
-  visible = true
-}</code></pre>
-          </section>
-          <section>
-            <h3>A Real Program - Final config</h3>
-<pre><code># build.sbt
-import AssemblyKeys._
-
-assemblySettings
-
-mainClass := Some(“com.gdi.tictactoe.TicTacToe”)
-
-organization := "com.gdi"
-
-name := "tictactoe"
-
-version := "1.0-SNAPSHOT"
-
-scalaVersion := "2.10.2"
-
-libraryDependencies ++= Seq(
-  "org.scala-lang" % "scala-swing" % scalaVersion.value
-)</code></pre>
-          </section>
-          <section>
-            <h3>A Real Program - Final config</h3>
-<pre><code># project/assembly.sbt
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.9.1")
+        <section>
+          <h2>A Real Program</h2>
+          <p><strong><string class="blue">How to run it?</strong></p>
+<pre><code>$ sbt assembly
+$ java -jar target/scala-2.10/tictactoe-assembly-1.0-SNAPSHOT.jar
 </code></pre>
           </section>
+          </section>
           <section>
-            <h2>DONE!!!!1!!</h2>
-            <h3>Q/A &amp; Open topics</h3>
+            <h2>We're Done!</h2>
+            <p class="blue">Q &amp; A</p>
+            <p class="blue">Open Topics</p>
           </section>
           <section>
             <h3>Upcoming Events</h3>
