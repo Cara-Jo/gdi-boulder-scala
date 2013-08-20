@@ -55,6 +55,26 @@
           <h3>Class notes</h3>
           <p>All slides are avaliable to download at <a href="http://gdiboulder.com/scala">gdiboulder.com/scala</a></p>
         </section>
+        <section>
+          <h3>Scala Resources</h3>
+          <ul>
+              <li>Websites</li>
+              <ul>
+                  <li><a href="http://scala-lang.org">Scala Lang</a></li>
+                  <li><a href="http://twitter.github.io/scala_school/">Scala School</a></li>
+              </ul>
+              <li>Books</li>
+              <ul>
+                  <li><a href="http://www.artima.com/shop/programming_in_scala_2ed">Programming In Scala: Second Edition</a></li>
+                  <li><a href="http://ofps.oreilly.com/titles/9780596155957/">Programming Scala</a> (Older but free.)</li>
+              </ul>
+              <li>Tools</li>
+              <ul>
+                  <li><a href="http://www.kogics.net/sf:kojo">Kojo</a></li>
+                  <li><a href="http://www.scala-sbt.org/">Simple Build Tool (SBT)</a></li>
+              </ul>
+          </ul>
+        </section>
         <!-- Welcome-->
         <section class="hide-pdf">
           <h3>Welcome!</h3>
@@ -488,7 +508,7 @@ println(xs)    // Set(1, 2, 3)
 xs(2)    // true
 xs(4)    // false</code></pre>
           <p class="blue">Map - A dictionary</p>
-<pre><code class="scala">val kvs = Map(“A” -&gt; List(“Apple”, “Anana”), “B” &gt; -List(“Ball”))
+<pre><code class="scala">val kvs = Map(“A” -&gt; List(“Apple”, “Anana”), “B” -&gt; List(“Ball”))
 kvs(“B”)    // List(“Ball”)
 kvs(“C”)    // error
 kvs.get(“B”)    // Some(List(“Ball”))
@@ -578,9 +598,9 @@ writeToFile(“/tmp/out.txt”, data.map(_ + “\n”))</code></pre>
         <section>
           <h3>Pattern Matching and Unapply</h3>
           <p class="blue"><code class="scala">match</code> is like a switch statement</p>
-<pre><code class="scala">val stanza = “Me”
+<pre><code class="scala">val homer = “Me”
 
-stanza match {
+homer match {
   case “Dough” =&gt; “That stuff that buys me beer”
   case “Ray” =&gt; “The guy that brings me beer”
   case “Me” =&gt; “The guy that drinks the beer”
@@ -638,12 +658,19 @@ def ordinal(n: Int): String = (n % 10) match {
           <h3>Pattern Matching and Unapply</h3>
           <p class="blue">Under the covers it’s not <code class="scala">match</code> that is special</p>
 <pre><code class="scala">// We'll cover implicit class in a bit.
-implicit class MySwitch[A](item: A) {
+implicit class MyMatcher[A](item: A) {
 
-  def switch[B](pf: PartialFunction[A,B]): B =
+  def oneOfThese[B](pf: PartialFunction[A,B]): B =
     if (pf.isDefinedAt(item)) pf(item)
     else
-      throw new scala.MatchError(“switch did not cover all cases”)
+      throw new scala.MatchError(“did not cover all cases”)
+}
+
+def ordinal(n: Int): String = (n % 10) oneOfThese {
+  case 1 =&gt; s“${n}st”
+  case 2 =&gt; s“${n}nd”
+  case 3 =&gt; s“${n}rd”
+  case _ =&gt; s”${n}th”
 }
 </code></pre>
         </section>
