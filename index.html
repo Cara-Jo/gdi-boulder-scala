@@ -519,11 +519,13 @@ kvs.get(“C”)    // None</code></pre>
           <p class="blue">Option - optional value</p>
           <p class="green">Values of Some(item) and None</p>
 <pre><code class="scala">val mCount = Some(10)
-mCountount.get    // 10
-m.isDefined    // true
+mCount.get    // 10
+mCount.isDefined    // true
+mCount.isEmpty    // false
 
 val mSize = Option.empty[Int]
 mSize.get    // error
+mSize.isDefined    // false
 mSize.isEmpty    // true
 mSize.getOrElse(12)    // 12</code></pre>
           <p class="green">Unlike <code class="scala">null</code>, Option is transformation friendly<p>
